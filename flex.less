@@ -13,14 +13,6 @@
 //
 // Property Name: display
 // Values: flex | inline-flex
-.display(@value: flex) {
-    display: ~"-webkit-@{value}";  // Webkit Standard
-    display: ~"-moz-@{value}";     // Mozilla Standard
-    display: ~"-ms-@{value}box";   // IE 10 Mid
-    display: ~"-ms-@{value}";      // IE 11 Standard
-    display: @value;               // Standard
-}
-
 .display(@value: flex) when (@value = flex) {
     display: -moz-box;              // Mozilla Old
     display: -webkit-box;           // Webkit Old
@@ -31,19 +23,20 @@
     display: -webkit-inline-box;    // Webkit Old
 }
 
+.display(@value: flex) {
+    display: ~"-webkit-@{value}";  // Webkit Standard
+    display: ~"-moz-@{value}";     // Mozilla Standard
+    display: ~"-ms-@{value}box";   // IE 10 Mid
+    display: ~"-ms-@{value}";      // IE 11 Standard
+    display: @value;               // Standard
+}
+
 
 // Axis Alignment
 // --------------
 //
 // Property Name: justify-content
 // Values: flex-start | flex-end | center | space-between | space-around
-.justify-content(@value: flex-start) {
-    -webkit-justify-content: @value;  // Webkit Standard
-       -moz-justify-content: @value;  // Mozilla Standard
-        -ms-justify-content: @value;  // IE 11 Standard
-            justify-content: @value;  // Standard
-}
-
 .justify-content(@value: flex-start) when (@value = flex-start) {
     -webkit-box-pack: start;          // Webkit Old
        -moz-box-pack: start;          // Mozilla Old
@@ -73,19 +66,18 @@
        -ms-flex-pack: distribute;     // IE 10 Mid
 }
 
+.justify-content(@value: flex-start) {
+    -webkit-justify-content: @value;  // Webkit Standard
+       -moz-justify-content: @value;  // Mozilla Standard
+        -ms-justify-content: @value;  // IE 11 Standard
+            justify-content: @value;  // Standard
+}
 
 // Cross Axis Alignment
 // --------------------
 //
 // Property Name: align-items
 // Values: flex-start | flex-end | center | baseline | stretch
-.align-items(@value: stretch) {
-    -webkit-align-items: @value;  // Webkit Standard
-       -moz-align-items: @value;  // Mozilla Standard
-        -ms-align-items: @value;  // IE 11 Standard
-            align-items: @value;  // Standard
-}
-
 .align-items(@value: stretch) when (@value = flex-start) {
     -webkit-box-align: start;          // Webkit Old
        -moz-box-align: start;          // Mozilla Old
@@ -105,6 +97,13 @@
        -ms-flex-align: end;            // IE 10 Mid
 }
 
+.align-items(@value: stretch) {
+    -webkit-align-items: @value;  // Webkit Standard
+       -moz-align-items: @value;  // Mozilla Standard
+        -ms-align-items: @value;  // IE 11 Standard
+            align-items: @value;  // Standard
+}
+
 
 
 // Individual Cross-Axis Alignment
@@ -112,13 +111,6 @@
 //
 // Property Name: align-self
 // Values: auto | flex-start | flex-end | center | baseline | stretch
-.align-self(@value: auto) {
-    -webkit-align-self: @value;          // Webkit Standard
-       -moz-align-self: @value;          // Mozilla Standard
-        -ms-align-self: @value;          // IE 11 Standard
-            align-self: @value;          // Standard
-}
-
 .align-self(@value: auto) when (@value = flex-start) {
        -ms-item-flex-align: start;       // IE 10 Mid
 }
@@ -131,19 +123,19 @@
        -ms-item-flex-align: end;         // IE 10 Mid
 }
 
+.align-self(@value: auto) {
+    -webkit-align-self: @value;          // Webkit Standard
+       -moz-align-self: @value;          // Mozilla Standard
+        -ms-align-self: @value;          // IE 11 Standard
+            align-self: @value;          // Standard
+}
+
 
 // Flex Line Alignment
 // -------------------
 //
 // Property Name: align-content
 // Values: flex-start | flex-end | center | space-between | space-around | stretch
-.align-content(@value: auto) {
-    -webkit-align-content: @value;       // Webkit Standard
-       -moz-align-content: @value;       // Mozilla Standard
-        -ms-align-content: @value;       // IE 11 Standard
-            align-content: @value;       // Standard
-}
-
 .align-content(@value: auto) when (@value = flex-start) {
        -ms-flex-line-pack: start;        // IE 10 Mid
 }
@@ -162,6 +154,13 @@
 
 .align-content(@value: auto) when (@value = space-around) {
        -ms-flex-line-pack: distribute;   // IE 10 Mid
+}
+
+.align-content(@value: auto) {
+    -webkit-align-content: @value;       // Webkit Standard
+       -moz-align-content: @value;       // Mozilla Standard
+        -ms-align-content: @value;       // IE 11 Standard
+            align-content: @value;       // Standard
 }
 
 
@@ -240,13 +239,6 @@
 //
 // Property Name: flex-direction
 // Values: row | row-reverse | column | column-reverse
-.flex-direction(@value: row) {
-    -webkit-flex-direction: @value;   // Webkit Standard
-       -moz-flex-direction: @value;   // Mozilla Standard
-        -ms-flex-direction: @value;   // IE 10 Mid, IE 11 Standard
-            flex-direction: @value;   // Standard
-}
-
 .flex-direction(@value: row) when (@value = row) {
     .box-orient(horizontal);
     .box-direction(normal);
@@ -268,6 +260,14 @@
     .box-direction(reverse);
 }
 
+.flex-direction(@value: row) {
+    -webkit-flex-direction: @value;   // Webkit Standard
+       -moz-flex-direction: @value;   // Mozilla Standard
+        -ms-flex-direction: @value;   // IE 10 Mid, IE 11 Standard
+            flex-direction: @value;   // Standard
+}
+
+
 
 // Old Properties
 // --------------
@@ -288,13 +288,6 @@
 //
 // Property Name: flex-wrap
 // Values: nowrap | wrap | wrap-reverse
-.flex-wrap(@value: nowrap) {
-    -webkit-flex-wrap: @value;      // Webkit Standard
-       -moz-flex-wrap: @value;      // Mozilla Standard
-        -ms-flex-wrap: @value;      // IE 10 Mid, IE 11 Standard
-            flex-wrap: @value;      // Standard
-}
-
 .flex-wrap(@value: nowrap) when (@value = nowrap) {
     -webkit-box-lines: single;      // Webkit Old
        -moz-box-lines: single;      // Mozilla Old
@@ -305,17 +298,10 @@
        -moz-box-lines: mulitple;    // Mozilla Old
 }
 
-
-// -----------------------------------------------------------------------------
-//           Testing Ground
-// -----------------------------------------------------------------------------
-
-body {
-    .flex(0, 0, auto);
-    .display(flex);
-    .justify-content(flex-end);
-    .align-items(flex-start);
-    .flex-direction(row-reverse);
+.flex-wrap(@value: nowrap) {
+    -webkit-flex-wrap: @value;      // Webkit Standard
+       -moz-flex-wrap: @value;      // Mozilla Standard
+        -ms-flex-wrap: @value;      // IE 10 Mid, IE 11 Standard
+            flex-wrap: @value;      // Standard
 }
-
 
