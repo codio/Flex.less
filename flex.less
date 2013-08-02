@@ -112,15 +112,15 @@
 // Property Name: align-self
 // Values: auto | flex-start | flex-end | center | baseline | stretch
 .align-self(@value: auto) when (@value = flex-start) {
-       -ms-item-flex-align: start;       // IE 10 Mid
+       -ms-flex-item-align: start;       // IE 10 Mid
 }
 
 .align-self(@value: auto) when (@value = auto), (@value = center), (@value = baseline), (@value = stretch) {
-       -ms-item-flex-align: @value;      // IE 10 Mid
+       -ms-flex-item--align: @value;      // IE 10 Mid
 }
 
 .align-self(@value: auto) when (@value = flex-end) {
-       -ms-item-flex-align: end;         // IE 10 Mid
+       -ms-flex-item-align: end;         // IE 10 Mid
 }
 
 .align-self(@value: auto) {
@@ -171,8 +171,8 @@
 // Property Name: order
 // Values: <integer>
 .order(@value: 0) {
-   -webkit-box-ordinal-group: @value;       // Webkit Old
-      -moz-box-ordinal-group: @value;       // Mozilla Old
+   -webkit-box-ordinal-group: @value + 1;   // Webkit Old
+      -moz-box-ordinal-group: @value + 1;   // Mozilla Old
               -ms-flex-order: @value;       // IE 10 Mid
                -webkit-order: @value;       // Webkit Standard
                   -moz-order: @value;       // Mozilla Standard
@@ -305,3 +305,15 @@
             flex-wrap: @value;      // Standard
 }
 
+
+// Shorthand - Flex Flow
+// ---------------------
+//
+// Property Name: flex-flow
+// Values: <‘flex-direction’> || <‘flex-wrap’>
+.flex-flow(@direction: row, @wrap: nowrap) {
+    -webkit-flex-flow: @arguments;    // Webkit Standard
+       -moz-flex-flow: @arguments;    // Mozilla Standard
+        -ms-flex-flow: @arguments;    // IE 10 Mid, IE 11 Standard
+            flex-flow: @arguments;
+}
