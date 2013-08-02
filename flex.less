@@ -1,0 +1,38 @@
+// FlexLess
+// ========
+//
+// Less mixins for using flexbox without crying.
+
+
+// Enabeling Flexbox
+// -----------------
+//
+// Property Name: display
+// Values: flex | inline-flex
+.display(@value: flex) {
+    display: ~"-webkit-@{value}";  // Webkit Standard
+    display: ~"-moz-@{value}";     // Mozilla Standard
+    display: ~"-ms-@{value}box"    // IE 10 Mid
+    display: ~"-ms-@{value}";      // IE 11 Standard
+    display: @value                // Standard
+}
+
+.display(@value: flex) when (@value = flex) {
+    display: -moz-box;              // Mozilla Old
+    display: -webkit-box;           // Webkit Old
+}
+
+.display(@value: flex) when (@value = inline-flex) {
+    display: -moz-inline-box;       // Mozilla Old
+    display: -webkit-inline-box;    // Webkit Old
+}
+
+
+// Axis Alignment
+// --------------
+//
+// Property Name: justify-content
+// Values: flex-start | flex-end | center | space-between | space-around
+.justify-content(@value: flex-start) {
+
+}
