@@ -4,11 +4,11 @@ module.exports = (grunt) ->
     less:
       dev:
         files:
-          'flex.css': 'flex.less'
+          'app.css': 'app.less'
 
     watch:
       dev:
-        files: 'flex.less'
+        files: 'app.less'
         tasks: ['less:dev']
 
 

@@ -1,0 +1,27 @@
+.container {
+  display: -moz-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: -ms-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -moz-box-direction: normal;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 500px;
+}
+.container .item {
+  height: 40px;
+  background: green;
+  padding: 10px;
+  border: 1px solid black;
+}
+.container .item:nth-child(4) {
+  margin-top: auto;
+}

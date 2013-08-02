@@ -1,0 +1,31 @@
+
+// -----------------------------------------------------------------------------
+//           Testing Ground
+// -----------------------------------------------------------------------------
+
+@import "flex.less";
+
+body {
+
+}
+
+.container {
+    .display(flex);
+    .flex-direction(column);
+
+    height: 500px;
+
+
+    .item {
+        height: 40px;
+        background: green;
+        padding: 10px;
+        border: 1px solid black;
+
+    }
+    .item:nth-child(4) {
+        margin-top: auto;
+    }
+}
+
+
