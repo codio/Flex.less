@@ -24,6 +24,21 @@ The mixin names and their values correspond to the official draft.
 
 ## Browser Compatability
 
+In Firefox < 22 you need to add the following snippet to every element that
+you set `display: flex`.
+
+```css
+/*
+ * Legacy Firefox implementation treats all flex containers
+ * as inline-block elements.
+ */
+@-moz-document url-prefix() {
+    #selector {
+        width: 100%;
+        -moz-box-sizing: border-box;
+    }
+}
+```
 
 
 ## Sources
