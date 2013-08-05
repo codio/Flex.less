@@ -1,15 +1,14 @@
 {
-  "name": "flexless",
+  "name": "flex.less",
   "version": "0.0.1",
   "description": "Less mixins for flexbox layouts.",
-  "main": "index.js",
+  "main": "static/index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Friedel Ziegelmayer <dignifiedquire@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "less": "~1.4.2",
     "grunt-contrib-less": "~0.6.4",
     "grunt": "~0.4.1",
     "grunt-contrib-watch": "~0.5.1"

@@ -1,10 +1,10 @@
-
+# Gruntfile for flex.less
 module.exports = (grunt) ->
   grunt.initConfig
     less:
       dev:
         files:
-          'app.css': 'app.less'
+          'static/app.css': 'app.less'
 
     watch:
       dev:
