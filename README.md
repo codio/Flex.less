@@ -19,7 +19,7 @@ The mixin names and their values correspond to the official draft.
 * `flex-basis`
 * `flex-direction`
 * `flex-wrap`
-* `flex-grow`
+* `flex-flow`
 
 
 ## Browser Compatability
