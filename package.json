@@ -1,8 +1,8 @@
 {
   "name": "flex.less",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Less mixins for flexbox layouts.",
-  "main": "static/index.html",
+  "main": "./flex.less",
   "scripts": {},
   "author": "Friedel Ziegelmayer <dignifiedquire@gmail.com>",
   "license": "MIT",
@@ -10,5 +10,11 @@
     "grunt-contrib-less": "~0.6.4",
     "grunt": "~0.4.1",
     "grunt-contrib-watch": "~0.5.1"
-  }
+  },
+  "keywords": [
+    "flex",
+    "less",
+    "css",
+    "flexbox"
+  ]
 }
