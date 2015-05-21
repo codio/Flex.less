@@ -3,34 +3,32 @@
 //
 // Less mixins for using flexbox without crying.
 //
-// Last update: 02.08.2013
+// Last update: 13.04.2014
+//
+// Includes the  workaround for https://bugzilla.mozilla.org/show_bug.cgi?id=946167
+// old flexbox syntax style (<2009) used instead of new (>2009)
 
-
-
-
-// Enabeling Flexbox
+// Enabling Flexbox
 // -----------------
 //
 // Property Name: display
 // Values: flex | inline-flex
 .display(@value: flex) when (@value = flex) {
-    display: -moz-box;              // Mozilla Old
-    display: -webkit-box;           // Webkit Old
+  display: -moz-box; // Mozilla Old
+  display: -webkit-box; // Webkit Old
 }
 
 .display(@value: flex) when (@value = inline-flex) {
-    display: -moz-inline-box;       // Mozilla Old
-    display: -webkit-inline-box;    // Webkit Old
+  display: -moz-inline-box; // Mozilla Old
+  display: -webkit-inline-box; // Webkit Old
 }
 
 .display(@value: flex) {
-    display: ~"-webkit-@{value}";  // Webkit Standard
-    display: ~"-moz-@{value}";     // Mozilla Standard
-    display: ~"-ms-@{value}box";   // IE 10 Mid
-    display: ~"-ms-@{value}";      // IE 11 Standard
-    display: @value;               // Standard
+  display: ~"-webkit-@{value}"; // Webkit Standard
+  display: ~"-ms-@{value}box"; // IE 10 Mid
+  display: ~"-ms-@{value}"; // IE 11 Standard
+  display: @value; // Standard
 }
-
 
 // Axis Alignment
 // --------------
@@ -38,39 +36,39 @@
 // Property Name: justify-content
 // Values: flex-start | flex-end | center | space-between | space-around
 .justify-content(@value: flex-start) when (@value = flex-start) {
-    -webkit-box-pack: start;          // Webkit Old
-       -moz-box-pack: start;          // Mozilla Old
-       -ms-flex-pack: start;          // IE 10 Mid
+  -webkit-box-pack: start; // Webkit Old
+  -moz-box-pack: start; // Mozilla Old
+  -ms-flex-pack: start; // IE 10 Mid
 }
 
 .justify-content(@value: flex-start) when (@value = center) {
-    -webkit-box-pack: center;         // Webkit Old
-       -moz-box-pack: center;         // Mozilla Old
-       -ms-flex-pack: center;         // IE 10 Mid
+  -webkit-box-pack: center; // Webkit Old
+  -moz-box-pack: center; // Mozilla Old
+  -ms-flex-pack: center; // IE 10 Mid
 
 }
 
 .justify-content(@value: flex-start) when (@value = flex-end) {
-    -webkit-box-pack: end;            // Webkit Old
-       -moz-box-pack: end;            // Mozilla Old
-       -ms-flex-pack: end;            // IE 10 Mid
+  -webkit-box-pack: end; // Webkit Old
+  -moz-box-pack: end; // Mozilla Old
+  -ms-flex-pack: end; // IE 10 Mid
 }
 
 .justify-content(@value: flex-start) when (@value = space-between) {
-    -webkit-box-pack: justify;        // Webkit Old
-       -moz-box-pack: justify;        // Mozilla Old
-       -ms-flex-pack: justify;        // IE 10 Mid
+  -webkit-box-pack: justify; // Webkit Old
+  -moz-box-pack: justify; // Mozilla Old
+  -ms-flex-pack: justify; // IE 10 Mid
 }
 
 .justify-content(@value: flex-start) when (@value = space-around) {
-       -ms-flex-pack: distribute;     // IE 10 Mid
+  -ms-flex-pack: distribute; // IE 10 Mid
 }
 
 .justify-content(@value: flex-start) {
-    -webkit-justify-content: @value;  // Webkit Standard
-       -moz-justify-content: @value;  // Mozilla Standard
-        -ms-justify-content: @value;  // IE 11 Standard
-            justify-content: @value;  // Standard
+  -webkit-justify-content: @value; // Webkit Standard
+  -moz-justify-content: @value; // Mozilla Standard
+  -ms-justify-content: @value; // IE 11 Standard
+  justify-content: @value; // Standard
 }
 
 // Cross Axis Alignment
@@ -79,32 +77,30 @@
 // Property Name: align-items
 // Values: flex-start | flex-end | center | baseline | stretch
 .align-items(@value: stretch) when (@value = flex-start) {
-    -webkit-box-align: start;          // Webkit Old
-       -moz-box-align: start;          // Mozilla Old
-       -ms-flex-align: start;          // IE 10 Mid
+  -webkit-box-align: start; // Webkit Old
+  -moz-box-align: start; // Mozilla Old
+  -ms-flex-align: start; // IE 10 Mid
 }
 
 .align-items(@value: stretch) when (@value = center), (@value = baseline), (@value = stretch) {
-    -webkit-box-align: @value;         // Webkit Old
-       -moz-box-align: @value;         // Mozilla Old
-       -ms-flex-align: @value;         // IE 10 Mid
+  -webkit-box-align: @value; // Webkit Old
+  -moz-box-align: @value; // Mozilla Old
+  -ms-flex-align: @value; // IE 10 Mid
 
 }
 
 .align-items(@value: stretch) when (@value = flex-end) {
-    -webkit-box-align: end;            // Webkit Old
-       -moz-box-align: end;            // Mozilla Old
-       -ms-flex-align: end;            // IE 10 Mid
+  -webkit-box-align: end; // Webkit Old
+  -moz-box-align: end; // Mozilla Old
+  -ms-flex-align: end; // IE 10 Mid
 }
 
 .align-items(@value: stretch) {
-    -webkit-align-items: @value;  // Webkit Standard
-       -moz-align-items: @value;  // Mozilla Standard
-        -ms-align-items: @value;  // IE 11 Standard
-            align-items: @value;  // Standard
+  -webkit-align-items: @value; // Webkit Standard
+  -moz-align-items: @value; // Mozilla Standard
+  -ms-align-items: @value; // IE 11 Standard
+  align-items: @value; // Standard
 }
-
-
 
 // Individual Cross-Axis Alignment
 // -------------------------------
@@ -112,24 +108,23 @@
 // Property Name: align-self
 // Values: auto | flex-start | flex-end | center | baseline | stretch
 .align-self(@value: auto) when (@value = flex-start) {
-       -ms-flex-item-align: start;       // IE 10 Mid
+  -ms-flex-item-align: start; // IE 10 Mid
 }
 
 .align-self(@value: auto) when (@value = auto), (@value = center), (@value = baseline), (@value = stretch) {
-       -ms-flex-item-align: @value;      // IE 10 Mid
+  -ms-flex-item--align: @value; // IE 10 Mid
 }
 
 .align-self(@value: auto) when (@value = flex-end) {
-       -ms-flex-item-align: end;         // IE 10 Mid
+  -ms-flex-item-align: end; // IE 10 Mid
 }
 
 .align-self(@value: auto) {
-    -webkit-align-self: @value;          // Webkit Standard
-       -moz-align-self: @value;          // Mozilla Standard
-        -ms-align-self: @value;          // IE 11 Standard
-            align-self: @value;          // Standard
+  -webkit-align-self: @value; // Webkit Standard
+  -moz-align-self: @value; // Mozilla Standard
+  -ms-align-self: @value; // IE 11 Standard
+  align-self: @value; // Standard
 }
-
 
 // Flex Line Alignment
 // -------------------
@@ -137,33 +132,31 @@
 // Property Name: align-content
 // Values: flex-start | flex-end | center | space-between | space-around | stretch
 .align-content(@value: auto) when (@value = flex-start) {
-       -ms-flex-line-pack: start;        // IE 10 Mid
+  -ms-flex-line-pack: start; // IE 10 Mid
 }
 
 .align-content(@value: auto) when (@value = center), (@value = stretch) {
-       -ms-flex-line-pack: @value;       // IE 10 Mid
+  -ms-flex-line-pack: @value; // IE 10 Mid
 }
 
 .align-content(@value: auto) when (@value = flex-end) {
-       -ms-flex-line-pack: end;          // IE 10 Mid
+  -ms-flex-line-pack: end; // IE 10 Mid
 }
 
 .align-content(@value: auto) when (@value = space-between) {
-       -ms-flex-line-pack: justify;      // IE 10 Mid
+  -ms-flex-line-pack: justify; // IE 10 Mid
 }
 
 .align-content(@value: auto) when (@value = space-around) {
-       -ms-flex-line-pack: distribute;   // IE 10 Mid
+  -ms-flex-line-pack: distribute; // IE 10 Mid
 }
 
 .align-content(@value: auto) {
-    -webkit-align-content: @value;       // Webkit Standard
-       -moz-align-content: @value;       // Mozilla Standard
-        -ms-align-content: @value;       // IE 11 Standard
-            align-content: @value;       // Standard
+  -webkit-align-content: @value; // Webkit Standard
+  -moz-align-content: @value; // Mozilla Standard
+  -ms-align-content: @value; // IE 11 Standard
+  align-content: @value; // Standard
 }
-
-
 
 // Display Order
 // -------------
@@ -171,30 +164,32 @@
 // Property Name: order
 // Values: <integer>
 .order(@value: 0) {
-   -webkit-box-ordinal-group: @value + 1;   // Webkit Old
-      -moz-box-ordinal-group: @value + 1;   // Mozilla Old
-              -ms-flex-order: @value;       // IE 10 Mid
-               -webkit-order: @value;       // Webkit Standard
-                  -moz-order: @value;       // Mozilla Standard
-                   -ms-order: @value;       // IE 11 Standard
-                       order: @value;       // Standard
+  -webkit-box-ordinal-group: @value + 1; // Webkit Old
+  -moz-box-ordinal-group: @value + 1; // Mozilla Old
+  -ms-flex-order: @value; // IE 10 Mid
+  -webkit-order: @value; // Webkit Standard
+  -moz-order: @value; // Mozilla Standard
+  -ms-order: @value; // IE 11 Standard
+  order: @value; // Standard
 }
-
 
 // Flexibillity
 // ------------
 //
 // Property Name: flex
 // Values: none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]
-.flex (@grow: 1, @shrink: 1, @basis: 0%) {
-   -webkit-box-flex: @grow;         // Webkit Old
-      -moz-box-flex: @grow;         // Mozilla Old
-       -webkit-flex: @arguments;    // Webkit Standard
-          -moz-flex: @arguments;    // Mozilla Standard
-           -ms-flex: @arguments;    // IE 10 Mid, IE 11 Standard
-               flex: @arguments;    // Standard
-}
+.flex (@grow: 1, @shrink: 1, @basis: .01%) {
+  -webkit-box-flex: @grow; // Webkit Old
+  -moz-box-flex: @grow; // Mozilla Old
+  -webkit-flex: @arguments; // Webkit Standard
+  -moz-flex: @arguments; // Mozilla Standard
+  -ms-flex: @arguments; // IE 10 Mid, IE 11 Standard
+  flex: @arguments; // Standard
 
+  -ms-flex-positive: @grow; // Hack because for some reasons -ms-flex not working in IE10(on production with compiled styles)
+  -ms-flex-negative: @shrink;
+  -ms-flex-preferred-size: @basis;
+}
 
 // Longhand - Flex Grow
 // --------------------
@@ -202,10 +197,10 @@
 // Property Name: flex-grow
 // Value: <number>
 .flex-grow(@value: 0) {
-    -webkit-flex-grow: @value;      // Webkit Standard
-       -moz-flex-grow: @value;      // Mozilla Standard
-        -ms-flex-grow: @value;      // IE 10 Mid, IE 11 Standard
-            flex-grow: @value;      // Standard
+  -webkit-flex-grow: @value; // Webkit Standard
+  -moz-flex-grow: @value; // Mozilla Standard
+  -ms-flex-grow: @value; // IE 10 Mid, IE 11 Standard
+  flex-grow: @value; // Standard
 }
 
 // Longhand - Flex Shrink
@@ -214,10 +209,10 @@
 // Property Name: flex-shrink
 // Value: <number>
 .flex-shrink(@value: 1) {
-    -webkit-flex-shrink: @value;      // Webkit Standard
-       -moz-flex-shrink: @value;      // Mozilla Standard
-        -ms-flex-shrink: @value;      // IE 10 Mid, IE 11 Standard
-            flex-shrink: @value;      // Standard
+  -webkit-flex-shrink: @value; // Webkit Standard
+  -moz-flex-shrink: @value; // Mozilla Standard
+  -ms-flex-shrink: @value; // IE 10 Mid, IE 11 Standard
+  flex-shrink: @value; // Standard
 }
 
 // Longhand - Flex Basis
@@ -226,13 +221,11 @@
 // Property Name: flex-basis
 // Value: <number>
 .flex-basis(@value: auto) {
-    -webkit-flex-basis: @value;      // Webkit Standard
-       -moz-flex-basis: @value;      // Mozilla Standard
-        -ms-flex-basis: @value;      // IE 10 Mid, IE 11 Standard
-            flex-basis: @value;      // Standard
+  -webkit-flex-basis: @value; // Webkit Standard
+  -moz-flex-basis: @value; // Mozilla Standard
+  -ms-flex-basis: @value; // IE 10 Mid, IE 11 Standard
+  flex-basis: @value; // Standard
 }
-
-
 
 // Direction
 // ---------
@@ -240,48 +233,47 @@
 // Property Name: flex-direction
 // Values: row | row-reverse | column | column-reverse
 .flex-direction(@value: row) when (@value = row) {
-    .box-orient(horizontal);
-    .box-direction(normal);
+  .box-orient(horizontal);
+  .box-direction(normal);
+  min-width: 0;
 }
 
 .flex-direction(@value: row) when (@value = row-reverse) {
-    .box-orient(horizontal);
-    .box-direction(reverse);
-
+  .box-orient(horizontal);
+  .box-direction(reverse);
+  min-width: 0;
 }
 
 .flex-direction(@value: row) when (@value = column) {
-    .box-orient(vertical);
-    .box-direction(normal);
+  .box-orient(vertical);
+  .box-direction(normal);
+  min-height: 0;
 }
 
 .flex-direction(@value: row) when (@value = column-reverse) {
-    .box-orient(vertical);
-    .box-direction(reverse);
+  .box-orient(vertical);
+  .box-direction(reverse);
+  min-height: 0;
 }
 
 .flex-direction(@value: row) {
-    -webkit-flex-direction: @value;   // Webkit Standard
-       -moz-flex-direction: @value;   // Mozilla Standard
-        -ms-flex-direction: @value;   // IE 10 Mid, IE 11 Standard
-            flex-direction: @value;   // Standard
+  -webkit-flex-direction: @value; // Webkit Standard
+  -moz-flex-direction: @value; // Mozilla Standard
+  -ms-flex-direction: @value; // IE 10 Mid, IE 11 Standard
+  flex-direction: @value; // Standard
 }
-
-
 
 // Old Properties
 // --------------
 .box-direction(@value) {
-    -webkit-box-direction: @value;    // Webkit Old
-       -moz-box-direction: @value;    // Mozilla Old
+  -webkit-box-direction: @value; // Webkit Old
+  -moz-box-direction: @value; // Mozilla Old
 }
 
 .box-orient(@value) {
-    -webkit-box-orient: @value;       // Webkit Old
-       -moz-box-orient: @value;       // Mozilla Old
+  -webkit-box-orient: @value; // Webkit Old
+  -moz-box-orient: @value; // Mozilla Old
 }
-
-
 
 // Wrapping
 // --------
@@ -289,22 +281,21 @@
 // Property Name: flex-wrap
 // Values: nowrap | wrap | wrap-reverse
 .flex-wrap(@value: nowrap) when (@value = nowrap) {
-    -webkit-box-lines: single;      // Webkit Old
-       -moz-box-lines: single;      // Mozilla Old
+  -webkit-box-lines: single; // Webkit Old
+  -moz-box-lines: single; // Mozilla Old
 }
 
 .flex-wrap(@value: nowrap) when (@value = wrap) {
-    -webkit-box-lines: multiple;    // Webkit Old
-       -moz-box-lines: mulitple;    // Mozilla Old
+  -webkit-box-lines: multiple; // Webkit Old
+  -moz-box-lines: mulitple; // Mozilla Old
 }
 
 .flex-wrap(@value: nowrap) {
-    -webkit-flex-wrap: @value;      // Webkit Standard
-       -moz-flex-wrap: @value;      // Mozilla Standard
-        -ms-flex-wrap: @value;      // IE 10 Mid, IE 11 Standard
-            flex-wrap: @value;      // Standard
+  -webkit-flex-wrap: @value; // Webkit Standard
+  -moz-flex-wrap: @value; // Mozilla Standard
+  -ms-flex-wrap: @value; // IE 10 Mid, IE 11 Standard
+  flex-wrap: @value; // Standard
 }
-
 
 // Shorthand - Flex Flow
 // ---------------------
@@ -312,8 +303,8 @@
 // Property Name: flex-flow
 // Values: <‘flex-direction’> || <‘flex-wrap’>
 .flex-flow(@direction: row, @wrap: nowrap) {
-    -webkit-flex-flow: @arguments;    // Webkit Standard
-       -moz-flex-flow: @arguments;    // Mozilla Standard
-        -ms-flex-flow: @arguments;    // IE 10 Mid, IE 11 Standard
-            flex-flow: @arguments;
+  -webkit-flex-flow: @arguments; // Webkit Standard
+  -moz-flex-flow: @arguments; // Mozilla Standard
+  -ms-flex-flow: @arguments; // IE 10 Mid, IE 11 Standard
+  flex-flow: @arguments;
 }
