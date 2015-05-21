@@ -5,14 +5,12 @@ body {
   box-sizing: border-box;
 }
 body {
-  font-family: 'Muli', 'Open Sans', Arial, sans-serif;
   height: 100%;
   margin: 0;
   box-sizing: border-box;
   display: -moz-box;
   display: -webkit-box;
   display: -webkit-flex;
-  display: -moz-flex;
   display: -ms-flexbox;
   display: -ms-flex;
   display: flex;
@@ -20,6 +18,7 @@ body {
   -moz-box-orient: vertical;
   -webkit-box-direction: normal;
   -moz-box-direction: normal;
+  min-height: 0;
   -webkit-flex-direction: column;
   -moz-flex-direction: column;
   -ms-flex-direction: column;
@@ -36,21 +35,22 @@ body {
   display: -moz-box;
   display: -webkit-box;
   display: -webkit-flex;
-  display: -moz-flex;
   display: -ms-flexbox;
   display: -ms-flex;
   display: flex;
   -webkit-box-flex: 1;
   -moz-box-flex: 1;
-  -webkit-flex: 1 1 0%;
-  -moz-flex: 1 1 0%;
-  -ms-flex: 1 1 0%;
-  flex: 1 1 0%;
+  -webkit-flex: 1 1 0.01%;
+  -moz-flex: 1 1 0.01%;
+  -ms-flex: 1 1 0.01%;
+  flex: 1 1 0.01%;
+  -ms-flex-positive: 1;
+  -ms-flex-negative: 1;
+  -ms-flex-preferred-size: 0.01%;
 }
 #main > * {
   border: 1px solid #ccc;
   padding: 0.25em;
-  border-radius: 10px;
 }
 #main > article {
   -webkit-box-flex: 1;
@@ -59,6 +59,9 @@ body {
   -moz-flex: 1 0 0px;
   -ms-flex: 1 0 0px;
   flex: 1 0 0px;
+  -ms-flex-positive: 1;
+  -ms-flex-negative: 0;
+  -ms-flex-preferred-size: 0px;
   -webkit-box-ordinal-group: 3;
   -moz-box-ordinal-group: 3;
   -ms-flex-order: 2;
@@ -70,7 +73,6 @@ body {
   display: -moz-box;
   display: -webkit-box;
   display: -webkit-flex;
-  display: -moz-flex;
   display: -ms-flexbox;
   display: -ms-flex;
   display: flex;
@@ -94,7 +96,6 @@ nav {
   display: -moz-box;
   display: -webkit-box;
   display: -webkit-flex;
-  display: -moz-flex;
   display: -ms-flexbox;
   display: -ms-flex;
   display: flex;
@@ -116,10 +117,13 @@ nav {
   align-items: center;
   -webkit-box-flex: none;
   -moz-box-flex: none;
-  -webkit-flex: none 1 0%;
-  -moz-flex: none 1 0%;
-  -ms-flex: none 1 0%;
-  flex: none 1 0%;
+  -webkit-flex: none 1 0.01%;
+  -moz-flex: none 1 0.01%;
+  -ms-flex: none 1 0.01%;
+  flex: none 1 0.01%;
+  -ms-flex-positive: none;
+  -ms-flex-negative: 1;
+  -ms-flex-preferred-size: 0.01%;
 }
 nav > a {
   padding: 15px;
@@ -127,10 +131,13 @@ nav > a {
   display: block;
   -webkit-box-flex: 1;
   -moz-box-flex: 1;
-  -webkit-flex: 1 1 0%;
-  -moz-flex: 1 1 0%;
-  -ms-flex: 1 1 0%;
-  flex: 1 1 0%;
+  -webkit-flex: 1 1 0.01%;
+  -moz-flex: 1 1 0.01%;
+  -ms-flex: 1 1 0.01%;
+  flex: 1 1 0.01%;
+  -ms-flex-positive: 1;
+  -ms-flex-negative: 1;
+  -ms-flex-preferred-size: 0.01%;
   margin: auto 10px;
   text-decoration: none;
   background: blue;
@@ -155,7 +162,6 @@ nav > a:hover {
   display: -moz-box;
   display: -webkit-box;
   display: -webkit-flex;
-  display: -moz-flex;
   display: -ms-flexbox;
   display: -ms-flex;
   display: flex;
@@ -163,6 +169,7 @@ nav > a:hover {
   -moz-box-orient: horizontal;
   -webkit-box-direction: normal;
   -moz-box-direction: normal;
+  min-width: 0;
   -webkit-flex-direction: row;
   -moz-flex-direction: row;
   -ms-flex-direction: row;
@@ -182,23 +189,28 @@ nav > a:hover {
   -moz-flex: 1 0 0px;
   -ms-flex: 1 0 0px;
   flex: 1 0 0px;
+  -ms-flex-positive: 1;
+  -ms-flex-negative: 0;
+  -ms-flex-preferred-size: 0px;
 }
 #main > section > div,
 #main > section > div > div {
   border: 1px solid #cccccc;
   -webkit-box-flex: 1;
   -moz-box-flex: 1;
-  -webkit-flex: 1 1 0%;
-  -moz-flex: 1 1 0%;
-  -ms-flex: 1 1 0%;
-  flex: 1 1 0%;
+  -webkit-flex: 1 1 0.01%;
+  -moz-flex: 1 1 0.01%;
+  -ms-flex: 1 1 0.01%;
+  flex: 1 1 0.01%;
+  -ms-flex-positive: 1;
+  -ms-flex-negative: 1;
+  -ms-flex-preferred-size: 0.01%;
   padding: 0.25em;
   margin: 0.25em;
   background: white;
   display: -moz-box;
   display: -webkit-box;
   display: -webkit-flex;
-  display: -moz-flex;
   display: -ms-flexbox;
   display: -ms-flex;
   display: flex;
@@ -218,6 +230,7 @@ nav > a:hover {
   -moz-box-orient: vertical;
   -webkit-box-direction: normal;
   -moz-box-direction: normal;
+  min-height: 0;
   -webkit-flex-direction: column;
   -moz-flex-direction: column;
   -ms-flex-direction: column;
@@ -227,7 +240,6 @@ nav > a:hover {
   display: -moz-box;
   display: -webkit-box;
   display: -webkit-flex;
-  display: -moz-flex;
   display: -ms-flexbox;
   display: -ms-flex;
   display: flex;
@@ -241,68 +253,30 @@ nav > a:hover {
   align-items: center;
   -webkit-box-flex: none;
   -moz-box-flex: none;
-  -webkit-flex: none 1 0%;
-  -moz-flex: none 1 0%;
-  -ms-flex: none 1 0%;
-  flex: none 1 0%;
+  -webkit-flex: none 1 0.01%;
+  -moz-flex: none 1 0.01%;
+  -ms-flex: none 1 0.01%;
+  flex: none 1 0.01%;
+  -ms-flex-positive: none;
+  -ms-flex-negative: 1;
+  -ms-flex-preferred-size: 0.01%;
   background: gray;
 }
 #main > section > div > div > .content {
   background: blue;
   -webkit-box-flex: 1;
   -moz-box-flex: 1;
-  -webkit-flex: 1 1 0%;
-  -moz-flex: 1 1 0%;
-  -ms-flex: 1 1 0%;
-  flex: 1 1 0%;
+  -webkit-flex: 1 1 0.01%;
+  -moz-flex: 1 1 0.01%;
+  -ms-flex: 1 1 0.01%;
+  flex: 1 1 0.01%;
+  -ms-flex-positive: 1;
+  -ms-flex-negative: 1;
+  -ms-flex-preferred-size: 0.01%;
   display: -moz-box;
   display: -webkit-box;
   display: -webkit-flex;
-  display: -moz-flex;
   display: -ms-flexbox;
   display: -ms-flex;
   display: flex;
-}
-#main > section > div:first-child {
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-}
-#main > section > div:last-child {
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-}
-header {
-  display: -moz-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flexbox;
-  display: -ms-flex;
-  display: flex;
-  -webkit-box-pack: start;
-  -moz-box-pack: start;
-  -ms-flex-pack: start;
-  -webkit-justify-content: flex-start;
-  -moz-justify-content: flex-start;
-  -ms-justify-content: flex-start;
-  justify-content: flex-start;
-  -webkit-box-align: center;
-  -moz-box-align: center;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
-  -moz-align-items: center;
-  -ms-align-items: center;
-  align-items: center;
-  -webkit-box-flex: 0;
-  -moz-box-flex: 0;
-  -webkit-flex: 0 0 20px;
-  -moz-flex: 0 0 20px;
-  -ms-flex: 0 0 20px;
-  flex: 0 0 20px;
-  background: #eee;
-  padding: 1em;
-  margin: 10px 0;
-  border-radius: 10px;
-  color: rgba(0, 0, 0, 0.6);
-  text-shadow: 0 1px rgba(255, 255, 255, 0.75);
 }
