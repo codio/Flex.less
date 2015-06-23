@@ -16,5 +16,13 @@
     "less",
     "css",
     "flexbox"
-  ]
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/codio/Flex.less.git"
+  },
+  "bugs": {
+    "url": "https://github.com/codio/Flex.less/issues"
+  },
+  "homepage": "https://github.com/codio/Flex.less"
 }
